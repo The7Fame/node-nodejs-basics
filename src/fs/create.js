@@ -1,5 +1,12 @@
+import fs from "fs/promises";
+
+const toWrite = "I am fresh and young";
 const create = async () => {
-    // Write your code here 
+  try {
+    await fs.writeFile("./files/fresh.txt", toWrite);
+  } catch (error) {
+    throw new Error("FS operation failed");
+  }
 };
 
 await create();
